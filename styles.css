@@ -450,6 +450,45 @@ a:hover {
   color: var(--color-muted);
 }
 
+/* ---------- Collapsible CV sections (Bio page) ---------- */
+.cv-section-wrap {
+  margin-top: 2.5rem;
+}
+
+.cv-section summary.section-title {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0;
+  user-select: none;
+}
+
+.cv-section summary::-webkit-details-marker {
+  display: none;
+}
+
+.cv-section summary::before {
+  content: "\25B8";
+  display: inline-block;
+  color: var(--color-accent);
+  transition: transform 160ms ease;
+  font-family: var(--font-mono);
+}
+
+.cv-section[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.cv-section summary:hover {
+  color: var(--color-accent);
+}
+
+.cv-section .cv-list {
+  margin-top: 1.5rem;
+}
+
 /* ---------- Footer ---------- */
 footer {
   border-top: 1px solid var(--color-rule);
