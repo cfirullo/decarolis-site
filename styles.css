@@ -1,21 +1,21 @@
 /* ============================================================
    Francesco Decarolis — academic site
-   Minimal: white background, black text, blue accents
+   Minimal: white background, black text, forest-green accents
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300..900;1,8..60,300..900&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300..800;1,300..800&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
 :root {
   --color-bg: #ffffff;
-  --color-text: #111111;
+  --color-text: #171717;
   --color-strong: #000000;
   --color-muted: #6b6b6b;
   --color-rule: #e5e5e5;
-  --color-accent: #1e40af;      /* deep cobalt — links + active nav */
-  --color-accent-hover: #1e3a8a;
+  --color-accent: #065f46;      /* deep forest green — links + active nav */
+  --color-accent-hover: #064e3b;
 
-  --font-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  --font-serif: 'Spectral', Georgia, 'Times New Roman', serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
 
   --max-width: 720px;
   --gutter: 1.5rem;
