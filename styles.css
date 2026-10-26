@@ -1,0 +1,513 @@
+/* ============================================================
+   Francesco Decarolis — academic site
+   Minimal: white background, black text, blue accents
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300..900;1,8..60,300..900&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --color-bg: #ffffff;
+  --color-text: #111111;
+  --color-strong: #000000;
+  --color-muted: #6b6b6b;
+  --color-rule: #e5e5e5;
+  --color-accent: #1e40af;      /* deep cobalt — links + active nav */
+  --color-accent-hover: #1e3a8a;
+
+  --font-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  --max-width: 720px;
+  --gutter: 1.5rem;
+}
+
+/* ---------- Reset / base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-serif);
+  font-weight: 380;
+  font-optical-sizing: auto;
+  line-height: 1.65;
+  text-rendering: optimizeLegibility;
+}
+
+/* ---------- Container ---------- */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* ---------- Navigation ---------- */
+nav {
+  border-bottom: 1px solid var(--color-rule);
+  padding: 1.25rem 0;
+  background: var(--color-bg);
+}
+
+nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 2rem;
+}
+
+.logo {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--color-strong);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.75rem;
+}
+
+.nav-link {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  text-decoration: none;
+  padding-bottom: 0.15rem;
+  border-bottom: 1px solid transparent;
+  transition: color 160ms ease, border-color 160ms ease;
+}
+
+.nav-link:hover {
+  color: var(--color-accent);
+}
+
+.nav-link.active {
+  color: var(--color-strong);
+  border-bottom-color: var(--color-accent);
+}
+
+/* ---------- Main ---------- */
+main {
+  padding: 4rem 0 5rem;
+}
+
+/* ---------- Headings ---------- */
+h1 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 1.9rem;
+  line-height: 1.2;
+  color: var(--color-strong);
+  margin-bottom: 2rem;
+  letter-spacing: -0.01em;
+}
+
+h2 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: var(--color-strong);
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-rule);
+}
+
+h3 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: var(--color-strong);
+  line-height: 1.35;
+  margin-bottom: 0.4rem;
+}
+
+h3 a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-rule);
+  transition: border-color 160ms ease, color 160ms ease;
+}
+
+h3 a:hover {
+  color: var(--color-accent);
+  border-bottom-color: var(--color-accent);
+}
+
+/* ---------- Paragraph ---------- */
+p {
+  margin-bottom: 1.1rem;
+}
+
+strong {
+  color: var(--color-strong);
+  font-weight: 700;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  transition: color 160ms ease;
+}
+
+a:hover {
+  color: var(--color-accent-hover);
+}
+
+/* ---------- About page ---------- */
+.about-grid {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 2.5rem;
+  align-items: start;
+  margin-bottom: 1rem;
+}
+
+.about-photo-wrap {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: #f2f2f2;
+}
+
+.about-photo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.about-photo-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 2.2rem;
+  color: var(--color-muted);
+  letter-spacing: 0.02em;
+}
+
+.about-photo-meta {
+  margin-top: 0.9rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  line-height: 1.55;
+  color: var(--color-muted);
+  letter-spacing: 0.02em;
+}
+
+.about-photo-meta strong {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-strong);
+  margin-bottom: 0.4rem;
+  letter-spacing: 0;
+}
+
+.about-photo-meta a {
+  color: var(--color-muted);
+  display: block;
+  border: none;
+  text-decoration: none;
+}
+
+.about-photo-meta a:hover {
+  color: var(--color-accent);
+}
+
+.about-text-col p {
+  margin-bottom: 1.25rem;
+}
+
+.cv-link {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  padding: 0.55rem 1rem;
+  text-decoration: none;
+  transition: background 160ms ease, color 160ms ease;
+}
+
+.cv-link:hover {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+/* ---------- Research page ---------- */
+.hero-eyebrow {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+}
+
+.page-hero p {
+  font-size: 1.05rem;
+  color: var(--color-text);
+  max-width: 38rem;
+  margin-bottom: 0;
+}
+
+.section {
+  margin-top: 3.5rem;
+}
+
+.section-title {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+.research-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.research-item {
+  padding: 2rem 0;
+  border-top: 1px solid var(--color-rule);
+}
+
+.research-item:last-child {
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.research-item .meta {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 0.7rem;
+}
+
+.research-authors,
+.research-journal,
+.research-award {
+  font-size: 0.92rem;
+  color: var(--color-muted);
+  margin-bottom: 0.4rem;
+}
+
+.research-award {
+  color: var(--color-strong);
+  font-style: italic;
+}
+
+.research-journal {
+  font-style: italic;
+}
+
+.research-abstract {
+  margin-top: 1rem;
+  color: var(--color-text);
+}
+
+.research-coverage {
+  margin-top: 0.8rem;
+  font-size: 0.92rem;
+  color: var(--color-muted);
+}
+
+.research-coverage strong {
+  color: var(--color-strong);
+}
+
+.research-links {
+  margin-top: 0.4rem;
+}
+
+.paper-link {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  border: 1px solid var(--color-rule);
+  padding: 0.3rem 0.7rem;
+  text-decoration: none;
+  transition: border-color 160ms ease, color 160ms ease;
+}
+
+.paper-link:hover {
+  border-color: var(--color-accent);
+}
+
+/* ---------- CV / timeline (Bio page) ---------- */
+.cv-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.cv-row {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  gap: 1.5rem;
+  padding: 0.9rem 0;
+  border-top: 1px solid var(--color-rule);
+  font-size: 0.95rem;
+}
+
+.cv-row:last-child {
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.cv-year {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-muted);
+  letter-spacing: 0.02em;
+  padding-top: 0.1rem;
+}
+
+.cv-role strong {
+  color: var(--color-strong);
+  font-weight: 600;
+}
+
+/* ---------- Compact publication list (Research page) ---------- */
+.pub-list {
+  list-style: none;
+  counter-reset: pub;
+  display: flex;
+  flex-direction: column;
+}
+
+.pub-list li {
+  counter-increment: pub;
+  padding: 0.75rem 0 0.75rem 2rem;
+  border-top: 1px solid var(--color-rule);
+  font-size: 0.92rem;
+  position: relative;
+}
+
+.pub-list li:last-child {
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.pub-list li::before {
+  content: counter(pub) ".";
+  position: absolute;
+  left: 0;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-muted);
+}
+
+.pub-title a {
+  color: var(--color-strong);
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.pub-title a:hover {
+  color: var(--color-accent);
+  border-bottom-color: var(--color-accent);
+}
+
+.pub-authors,
+.pub-venue {
+  color: var(--color-muted);
+}
+
+.pub-sep {
+  color: var(--color-muted);
+}
+
+/* ---------- Footer ---------- */
+footer {
+  border-top: 1px solid var(--color-rule);
+  padding: 2rem 0;
+  margin-top: 4rem;
+}
+
+footer p {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--color-muted);
+  margin-bottom: 0.25rem;
+}
+
+footer p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 640px) {
+  html {
+    font-size: 16px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .about-photo-wrap {
+    max-width: 180px;
+  }
+
+  nav .container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .nav-links {
+    gap: 1.25rem;
+  }
+
+  main {
+    padding: 2.5rem 0 3.5rem;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .cv-row {
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
+  }
+
+  .pub-list li {
+    padding-left: 1.6rem;
+  }
+}
