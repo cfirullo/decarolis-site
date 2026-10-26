@@ -3,7 +3,7 @@
    Minimal: white background, black text, Bocconi-blue accents
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300..800;1,300..800&family=IBM+Plex+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Space+Mono:wght@400;700&display=swap');
 
 :root {
   --color-bg: #ffffff;
@@ -14,8 +14,8 @@
   --color-accent: #0046ad;      /* Bocconi blue — links + active nav */
   --color-accent-hover: #00368a;
 
-  --font-serif: 'Spectral', Georgia, 'Times New Roman', serif;
-  --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  --font-serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-mono: 'Space Mono', ui-monospace, 'SF Mono', Menlo, monospace;
 
   --max-width: 720px;
   --gutter: 1.5rem;
@@ -235,6 +235,12 @@ a:hover {
 
 .about-photo-meta a:hover {
   color: var(--color-accent);
+}
+
+.mail-icon {
+  display: inline-flex !important;
+  align-items: center;
+  margin-top: 0.5rem;
 }
 
 .about-text-col p {
