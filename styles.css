@@ -3,8 +3,6 @@
    Minimal: white background, black text, Bocconi-blue accents
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Space+Mono:wght@400;700&display=swap');
-
 :root {
   --color-bg: #ffffff;
   --color-text: #000000;
@@ -13,12 +11,37 @@
   --color-rule: #e5e5e5;
   --color-accent: #0046ad;      /* Bocconi blue — links + active nav */
   --color-accent-hover: #00368a;
+  color-scheme: light;
 
   --font-serif: 'Fraunces', Georgia, 'Times New Roman', serif;
   --font-mono: 'Space Mono', ui-monospace, 'SF Mono', Menlo, monospace;
 
   --max-width: 720px;
   --gutter: 1.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-bg: #0b0d0f;
+    --color-text: #e8e8e6;
+    --color-strong: #ffffff;
+    --color-muted: #9a9a96;
+    --color-rule: #2a2c2e;
+    --color-accent: #6ea8f0;
+    --color-accent-hover: #93c0f5;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --color-bg: #0b0d0f;
+  --color-text: #e8e8e6;
+  --color-strong: #ffffff;
+  --color-muted: #9a9a96;
+  --color-rule: #2a2c2e;
+  --color-accent: #6ea8f0;
+  --color-accent-hover: #93c0f5;
+  color-scheme: dark;
 }
 
 /* ---------- Reset / base ---------- */
@@ -50,7 +73,8 @@ body {
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 var(--gutter);
+  padding-left: max(var(--gutter), env(safe-area-inset-left, 0px));
+  padding-right: max(var(--gutter), env(safe-area-inset-right, 0px));
 }
 
 /* ---------- Navigation ---------- */
